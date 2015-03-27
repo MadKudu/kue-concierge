@@ -1,0 +1,26 @@
+{
+  "name": "kue-concierge",
+  "version": "0.0.1",
+  "description": "cleanup utility for kue",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/.bin/mocha test/**/*.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/MadKudu/kue-concierge.git"
+  },
+  "keywords": [
+    "kue"
+  ],
+  "author": "Paul Cothenet",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/MadKudu/kue-concierge/issues"
+  },
+  "homepage": "https://github.com/MadKudu/kue-concierge",
+  "devDependencies": {
+    "chai": "^2.2.0",
+    "mocha": "^2.2.1"
+  }
+}
