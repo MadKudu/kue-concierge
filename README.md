@@ -1,9 +1,44 @@
 # kue-concierge
 
+A utility to keep your kue tidy
 
-https://github.com/yi/node-kue-sweeper
+## Usage
 
-https://gist.github.com/niravmehta/6112330
+```
+var kue = require('kue');
+this.queue = kue.createQueue(config);
+var concierge = new index.KueConcierge(this.queue, options);
+```
+
+### Restart stuck jobs
+
+```
+concierge.restartStuck()
+```
+
+### Clear complete jobs
+
+```
+concierge.clearComplete()
+```
+
+### Clear failed jobs
+
+```
+concierge.clearFailed()
+```
+
+### Options
+
+```
+{
+	maxFailedTime: 10 * 24 * 60 * 60 * 1000; // 10 days,
+	maxActiveTime: 2 * 60 * 60 * 1000; // 2 hours
+	maxCompleteTime: 2 * 24 * 60 * 60 * 1000; // 2 days
+};
+```
+
+## Inspiration
 
 https://github.com/Automattic/kue/issues/58
 
