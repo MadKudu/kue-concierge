@@ -22,5 +22,10 @@
   "devDependencies": {
     "chai": "^2.2.0",
     "mocha": "^2.2.1"
+  },
+  "dependencies": {
+    "kue": "^0.8.12",
+    "moment": "^2.9.0",
+    "q": "^1.2.0"
   }
 }
