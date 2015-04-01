@@ -15,7 +15,7 @@
 		}
 	};
 	describe('kue_concierge', function () {
-		var index = require('../index.js');
+		var Concierge = require('../index.js');
 		describe('exports', function () {
 			var options = {
 				maxFailedTime: 1,
@@ -26,7 +26,7 @@
 			before(function() {
 				var kue = require('kue');
 				this.queue = kue.createQueue(config);
-				concierge = new index.KueConcierge(this.queue, options);
+				concierge = new Concierge(this.queue, options);
 			});
 			it('should initialize a client', function () {
 				expect(concierge).to.have.a.property('queue');
