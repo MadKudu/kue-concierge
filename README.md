@@ -27,6 +27,14 @@ concierge.clearComplete()
 concierge.clearFailed()
 ```
 
+### All of the above
+
+```
+concierge.cleanUp()
+```
+
+All functions above are promises
+
 ### Config
 
 Same format as the kue.createQueue options:
