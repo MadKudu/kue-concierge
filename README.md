@@ -7,7 +7,8 @@ A utility to keep your kue tidy
 ```
 var kue = require('kue');
 this.queue = kue.createQueue(config);
-var concierge = new index.KueConcierge(this.queue, options);
+var Concierge = require('kue-concierge');
+var concierge = new Concierge(this.queue, options);
 ```
 
 ### Restart stuck jobs

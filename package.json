@@ -1,6 +1,6 @@
 {
   "name": "kue-concierge",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "cleanup utility for kue",
   "main": "index.js",
   "scripts": {
