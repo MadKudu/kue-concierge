@@ -55,6 +55,12 @@ Same format as the kue.createQueue options:
 };
 ```
 
+## Test
+
+```
+npm test
+```
+
 ## Inspiration
 
 https://github.com/Automattic/kue/issues/58
