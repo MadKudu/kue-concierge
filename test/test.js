@@ -24,9 +24,7 @@
 			};
 			var concierge;
 			before(function() {
-				var kue = require('kue');
-				this.queue = kue.createQueue(config);
-				concierge = new Concierge(this.queue, options);
+				concierge = new Concierge(config, options);
 			});
 			it('should initialize a client', function () {
 				expect(concierge).to.have.a.property('queue');
