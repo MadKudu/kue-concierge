@@ -1,6 +1,6 @@
 # kue-concierge
 
-A utility to keep your kue tidy
+A utility to keep your [kue](https://github.com/Automattic/kue) tidy
 
 ## Usage
 
@@ -25,6 +25,24 @@ concierge.clearComplete()
 
 ```
 concierge.clearFailed()
+```
+
+### Config
+
+Same format as the kue.createQueue options:
+```
+{
+	prefix: 'q',
+	redis: {
+		port: 1234,
+		host: '10.0.50.20',
+		auth: 'password',
+		db: 3, // if provided select a non-default redis db
+		options: {
+			// see https://github.com/mranney/node_redis#rediscreateclient
+		}
+	}
+}
 ```
 
 ### Options
