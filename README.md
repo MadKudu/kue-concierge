@@ -1,3 +1,5 @@
+#  [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/MadKudu/kue-concierge.svg)](https://travis-ci.org/MadKudu/kue-concierge) [![Dependency Status](https://david-dm.org/MadKudu/kue-concierge.svg)](https://david-dm.org/MadKudu/kue-concierge)
+
 # kue-concierge
 
 A utility to keep your [kue](https://github.com/Automattic/kue) tidy
