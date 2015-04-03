@@ -1,4 +1,4 @@
-#  [![NPM version][npm-image]][npm-url] [![Build Status](https://travis-ci.org/MadKudu/kue-concierge.svg)](https://travis-ci.org/MadKudu/kue-concierge) [![Dependency Status](https://david-dm.org/MadKudu/kue-concierge.svg)](https://david-dm.org/MadKudu/kue-concierge)
+#  [![npm version](https://badge.fury.io/js/kue-concierge.svg)](http://badge.fury.io/js/kue-concierge) [![Build Status](https://travis-ci.org/MadKudu/kue-concierge.svg)](https://travis-ci.org/MadKudu/kue-concierge) [![Dependency Status](https://david-dm.org/MadKudu/kue-concierge.svg)](https://david-dm.org/MadKudu/kue-concierge)
 
 # kue-concierge
 
