@@ -41,18 +41,30 @@
 				var job_2 = {updated_at: moment().subtract(1,'hours').valueOf()};
 				expect(concierge.isJobExpired(job_2,'active')).to.be.false;
 			});
+			// it('should restart stuck jobs', function (done) {
+			// 	concierge.restartStuck().then(function() {
+			// 		return done();
+			// 	});
+			// });
+			// it('should clear complete jobs', function (done) {
+			// 	concierge.clearComplete().then(function() {
+			// 		return done();
+			// 	});
+			// });
+			// it('should clear failed jobs', function (done) {
+			// 	concierge.clearFailed().then(function() {
+			// 		return done();
+			// 	});
+			// });
+			it('should count complete jobs', function (done) {
+				concierge.countComplete().then(function(results) {
+					console.log(results);
+					return done();
+				});
+			});
 			it('should restart stuck jobs', function (done) {
-				concierge.restartStuck().then(function() {
-					return done();
-				});
-			});
-			it('should clear complete jobs', function (done) {
-				concierge.clearComplete().then(function() {
-					return done();
-				});
-			});
-			it('should clear failed jobs', function (done) {
-				concierge.clearFailed().then(function() {
+				this.timeout(60000);
+				concierge.clearAllComplete().then(function() {
 					return done();
 				});
 			});
