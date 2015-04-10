@@ -20,31 +20,25 @@ concierge.restartStuck()
 ### Clear complete jobs
 
 ```
-concierge.clearExpiredComplete()
+concierge.clearExpiredByType('complete')
 ```
 
 ### Clear failed jobs
 
 ```
-concierge.clearExpiredFailed()
-```
-
-### All of the above
-
-```
-concierge.cleanUp()
+concierge.clearExpiredByType('failed')
 ```
 
 ### Clear all complete jobs
 
 ```
-concierge.clearAllComplete()
+concierge.clearAllByType('complete')
 ```
 
 ### Clear all complete jobs (above a certain number)
 
 ```
-concierge.clearAllComplete(threshold)
+concierge.clearAllByType('complete', threshold)
 ```
 
 

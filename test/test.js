@@ -47,30 +47,30 @@
 				});
 			});
 			it('should clear old complete jobs', function (done) {
-				concierge.clearExpiredComplete().then(function() {
+				concierge.clearExpiredByType('complete').then(function() {
 					return done();
 				});
 			});
 			it('should clear failed jobs', function (done) {
-				concierge.clearExpiredFailed().then(function() {
+				concierge.clearExpiredByType('failed').then(function() {
 					return done();
 				});
 			});
 			it('should count complete jobs', function (done) {
-				concierge.countComplete().then(function(results) {
+				concierge.countJobs('complete').then(function(results) {
 					console.log(results);
 					return done();
 				});
 			});
 			it('should count complete jobs above a threshold', function (done) {
-				concierge.countComplete(5).then(function(results) {
+				concierge.countJobs('complete', 5).then(function(results) {
 					console.log(results);
 					return done();
 				});
 			});
 			it('should clear complete jobs above a certain number', function (done) {
 				this.timeout(60000);
-				concierge.clearAllComplete(8).then(function() {
+				concierge.clearAllByType('complete', 8).then(function() {
 					return done();
 				});
 			});
