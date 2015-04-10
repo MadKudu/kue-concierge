@@ -18,9 +18,9 @@
 		var Concierge = require('../index.js');
 		describe('exports', function () {
 			var options = {
-				maxFailedTime: 1,
+				maxFailedTime: 1 * 60 * 60 * 1000,
 				maxActiveTime: 2 * 60 * 60 * 1000,
-				maxCompleteTime: 2
+				maxCompleteTime: 3 * 60 * 60 * 1000
 			};
 			var concierge;
 			before(function() {
@@ -31,9 +31,9 @@
 				expect(concierge.queue).to.have.a.property('client');
 			});
 			it('should have configured values', function () {
-				expect(concierge).to.have.a.property('maxFailedTime', 1);
+				expect(concierge).to.have.a.property('maxFailedTime', 1 * 60 * 60 * 1000);
 				expect(concierge).to.have.a.property('maxActiveTime', 2 * 60 * 60 * 1000);
-				expect(concierge).to.have.a.property('maxCompleteTime', 2);
+				expect(concierge).to.have.a.property('maxCompleteTime', 3 * 60 * 60 * 1000);
 			});
 			it('should filter by age', function () {
 				var job_1 = {updated_at: moment().subtract(3,'hours').valueOf()};
@@ -41,30 +41,36 @@
 				var job_2 = {updated_at: moment().subtract(1,'hours').valueOf()};
 				expect(concierge.isJobExpired(job_2,'active')).to.be.false;
 			});
-			// it('should restart stuck jobs', function (done) {
-			// 	concierge.restartStuck().then(function() {
-			// 		return done();
-			// 	});
-			// });
-			// it('should clear complete jobs', function (done) {
-			// 	concierge.clearComplete().then(function() {
-			// 		return done();
-			// 	});
-			// });
-			// it('should clear failed jobs', function (done) {
-			// 	concierge.clearFailed().then(function() {
-			// 		return done();
-			// 	});
-			// });
+			it('should restart stuck jobs', function (done) {
+				concierge.restartStuck().then(function() {
+					return done();
+				});
+			});
+			it('should clear old complete jobs', function (done) {
+				concierge.clearExpiredComplete().then(function() {
+					return done();
+				});
+			});
+			it('should clear failed jobs', function (done) {
+				concierge.clearExpiredFailed().then(function() {
+					return done();
+				});
+			});
 			it('should count complete jobs', function (done) {
 				concierge.countComplete().then(function(results) {
 					console.log(results);
 					return done();
 				});
 			});
-			it('should restart stuck jobs', function (done) {
+			it('should count complete jobs above a threshold', function (done) {
+				concierge.countComplete(5).then(function(results) {
+					console.log(results);
+					return done();
+				});
+			});
+			it('should clear complete jobs above a certain number', function (done) {
 				this.timeout(60000);
-				concierge.clearAllComplete().then(function() {
+				concierge.clearAllComplete(8).then(function() {
 					return done();
 				});
 			});

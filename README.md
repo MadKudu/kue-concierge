@@ -20,13 +20,13 @@ concierge.restartStuck()
 ### Clear complete jobs
 
 ```
-concierge.clearComplete()
+concierge.clearExpiredComplete()
 ```
 
 ### Clear failed jobs
 
 ```
-concierge.clearFailed()
+concierge.clearExpiredFailed()
 ```
 
 ### All of the above
@@ -34,6 +34,19 @@ concierge.clearFailed()
 ```
 concierge.cleanUp()
 ```
+
+### Clear all complete jobs
+
+```
+concierge.clearAllComplete()
+```
+
+### Clear all complete jobs (above a certain number)
+
+```
+concierge.clearAllComplete(threshold)
+```
+
 
 All functions above are promises
 
