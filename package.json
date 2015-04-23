@@ -1,6 +1,6 @@
 {
 	"name": "kue-concierge",
-	"version": "0.2.1",
+	"version": "0.2.2",
 	"description": "cleanup utility for kue",
 	"main": "index.js",
 	"scripts": {
@@ -24,7 +24,7 @@
 		"mocha": "^2.2.1"
 	},
 	"dependencies": {
-		"kue": "^0.9.0",
+		"kue": "^0.8.12",
 		"moment": "^2.9.0",
 		"q": "^1.2.0"
 	}
